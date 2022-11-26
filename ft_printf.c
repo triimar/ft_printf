@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 18:22:02 by tmarts            #+#    #+#             */
-/*   Updated: 2022/11/26 20:12:22 by tmarts           ###   ########.fr       */
+/*   Updated: 2022/11/26 21:32:08 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ int	ft_conversions(const char *f_spec, va_list args)
 		len = ft_printf_u(va_arg(args, unsigned int));
 	else if (*f_spec == 'x' || *f_spec == 'X')
 		len = ft_printf_hex(va_arg(args, unsigned int));
-	else if (*f_spec == 'p')
-		len = ft_printf_p(va_arg(args, void *));
+	// else if (*f_spec == 'p')
+	// 	len = ft_printf_p(va_arg(args, void *));
 	return (len);
 }
 

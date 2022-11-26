@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 16:58:33 by tmarts            #+#    #+#             */
-/*   Updated: 2022/11/26 20:00:03 by tmarts           ###   ########.fr       */
+/*   Updated: 2022/11/26 22:32:01 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ static int	ft_u_intlen(unsigned int u)
 
 	length = 0;
 	div = u;
+	if (div == 0)
+		length++;
 	while (div != 0)
 	{
 		length++;
@@ -86,7 +88,7 @@ char	*ft_itoa_hex(unsigned int dec)
 	x_char = malloc (length + 1);
 	if (!x_char)
 		return (NULL);
-	x_char[length] = 0;	
+	x_char[length] = 0;
 	length -= 1;
 	while (length >= 0)
 	{
@@ -105,6 +107,11 @@ int	ft_printf_str(char *str)
 {
 	int	len;
 
+	if (!str)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 	len = ft_strlen(str);
 	write(1, str, len);
 	return (len);

@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 19:33:06 by tmarts            #+#    #+#             */
-/*   Updated: 2022/11/26 20:10:20 by tmarts           ###   ########.fr       */
+/*   Updated: 2022/11/26 22:13:11 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include "libftprintf.h"
-
+#include <limits.h>
 
 
 
@@ -153,13 +153,47 @@
 int	main(void)
 {
 	
-	printf("len: %d\n", ft_printf("%d4444d%ctll%%__%s\n", -1235, 'O', "PUTPUT"));
-	printf("len orig: %d\n", printf("%d4444d%ctll%%__%s\n", -1235, 'O', "PUTPUT"));
-	printf("len: %d\n", ft_printf("%u4444u%ctll%%__%s\n", 429496, 'O', "PUTPUT"));
-	printf("len orig: %d\n", printf("%u4444d%ctll%%__%s\n", 429496, 'O', "PUTPUT"));
-	printf("len: %d\n", ft_printf("f %%x = [%x];[%x]\n", 429, 0xABCDEF));
-	printf("len: %d\n", ft_printf("f %%X = [%X]\n", 4294967295u));
-	printf("len orig: %d\n", printf("f %%x = [%x];[%x]\n", 429, 0xABCDEF));
-	printf("len orig: %d\n", printf("f %%X = [%X]\n", 4294967295u));
-	printf("%p\n", NULL);
+	// printf("len: %d\n", ft_printf("%d4444d%ctll%%__%s\n", -1235, 'O', "PUTPUT"));
+	// printf("len orig: %d\n", printf("%d4444d%ctll%%__%s\n", -1235, 'O', "PUTPUT"));
+	// printf("len: %d\n", ft_printf("%u4444u%ctll%%__%s\n", 429496, 'O', "PUTPUT"));
+	// printf("len orig: %d\n", printf("%u4444d%ctll%%__%s\n", 429496, 'O', "PUTPUT"));
+	// printf("len: %d\n", ft_printf("f %%x = [%x];[%x]\n", 429, 0xABCDEF));
+	// printf("len: %d\n", ft_printf("f %%X = [%X]\n", 4294967295u));
+	// printf("len orig: %d\n", printf("f %%x = [%x];[%x]\n", 429, 0xABCDEF));
+	// printf("len orig: %d\n", printf("f %%X = [%X]\n", 4294967295u));
+	// printf("%p\n", NULL);
+	// printf("%% test");
+	// printf("f %%%%, [%%]\n");
+	// printf("f %%5%%, [%5%]\n");
+	// printf("f %%-5%%, [%-5%]\n");
+	// printf("f %%05%%, [%05%]\n");
+	// printf("f %%-05%%, [%-05%]\n");
+	// ft_printf("%% test");
+	// ft_printf("f %%%%, [%%]\n");
+	// ft_printf("f %%5%%, [%5%]\n");
+	// ft_printf("f %%-5%%, [%-5%]\n");
+	// ft_printf("f %%05%%, [%05%]\n");
+	// ft_printf("f %%-05%%, [%-05%]\n");
+	// printf("u - unsigned int test \n");
+	// ft_printf("f %u\n", 4294967295u);
+	// ft_printf("%u\n", 42);
+	// ft_printf("Kashim a %u histoires à raconter\n", 1001);
+	// ft_printf("Il fait au moins %u\n", -8000);
+	// ft_printf("%u\n", -0);
+	// ft_printf("%u\n", 0);
+	// ft_printf("%u\n", INT_MAX);
+	// ft_printf("%u\n", INT_MIN);
+	// ft_printf("%%u 0000042 == |%u|\n", 0000042);
+	// ft_printf("%%u \t == |%u|\n", '\t');
+	// ft_printf("%%u Lydie == |%u|\n\n", 'L'+'y'+'d'+'i'+'e');
+	// printf("len ft_printf: %i\n", ft_printf("%u\n", 0));
+	// printf("len printf: %i\n", printf("%u\n", 0));
+	// ft_printf("s - string test \n");
+	// ft_printf("hello, %8s.\n", "gavin");
+	// ft_printf("%-8s\n", "testing testing");
+	// ft_printf("this %s is empty\n", "");
+	// ft_printf("%s !", "Ceci n'est pas un \0 exercice !\n\n");
+	char *null_str = NULL;
+	printf("ft_printf len: %d\n", ft_printf("%s everywhere\n", null_str));
+	printf("printf len: %d\n", printf("%s everywhere\n", null_str));
 }
