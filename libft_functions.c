@@ -6,14 +6,10 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 16:57:25 by tmarts            #+#    #+#             */
-/*   Updated: 2022/11/26 17:08:50 by tmarts           ###   ########.fr       */
+/*   Updated: 2022/11/27 20:34:05 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <stdarg.h>
-#include <stdlib.h>
 #include "libftprintf.h"
 
 size_t	ft_strlen(const char *s)
@@ -76,4 +72,3 @@ char	*ft_itoa(int n)
 	}
 	return (n_char);
 }
-
