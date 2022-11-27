@@ -6,15 +6,16 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 16:58:33 by tmarts            #+#    #+#             */
-/*   Updated: 2022/11/27 20:34:36 by tmarts           ###   ########.fr       */
+/*   Updated: 2022/11/27 22:48:25 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_putchar(int c)
 {
-	write(1, &c, 1);
+	if (write(1, &c, 1) < 0)
+		return (-1);
 	return (1);
 }
 
@@ -104,4 +105,3 @@ char	*ft_itoa_hex(size_t dec, char x_case)
 	}
 	return (x_char);
 }
-

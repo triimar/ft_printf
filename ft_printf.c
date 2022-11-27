@@ -6,24 +6,19 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 18:22:02 by tmarts            #+#    #+#             */
-/*   Updated: 2022/11/27 20:33:45 by tmarts           ###   ########.fr       */
+/*   Updated: 2022/11/27 22:54:20 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
-// len, length, is the return value of ft_printf - 
-//the lenght of the string printed
-// msg, the message string, is the first argument of ft_printf
+/*len, length, is the return value of ft_printf - 
+the lenght of the string printed
+msg, the message string, is the first argument of ft_printf
 
-// void	ft_putchar(char c, int fd)
-// {
-// 	write(1, &c, fd);
-// }
-
-//finds suitable conversion and prints the target
-// returns nr of printed characters
-// f_spec - the format specifier
+finds suitable conversion and prints the target
+returns nr of printed characters
+f_spec - the format specifier*/
 
 int	ft_conversions(const char *f_spec, va_list args)
 {
@@ -51,6 +46,7 @@ int	ft_printf(const char *msg, ...)
 {
 	va_list	args;
 	int		len;
+	int		temp_len;
 
 	len = 0;
 	va_start(args, msg);
@@ -59,10 +55,18 @@ int	ft_printf(const char *msg, ...)
 		if (*msg == '%')
 		{
 			msg++;
-			len += ft_conversions(msg, args);
+			temp_len = ft_conversions(msg, args);
+			if (temp_len < 0)
+				return (-1);
+			len += temp_len;
 		}
 		else
-			len += ft_putchar(*msg);
+		{
+			temp_len = ft_putchar(*msg);
+			if (temp_len < 0)
+				return (-1);
+			len += temp_len;
+		}			
 		msg++;
 	}
 	va_end(args);
