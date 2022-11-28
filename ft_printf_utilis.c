@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 16:58:33 by tmarts            #+#    #+#             */
-/*   Updated: 2022/11/27 22:48:25 by tmarts           ###   ########.fr       */
+/*   Updated: 2022/11/28 13:15:14 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,24 @@ static int	ft_u_intlen(unsigned int u)
 		div = div / 10;
 	}
 	return (length);
-}		
+}	
+
+static int	ft_hex_len(size_t dec)
+{
+	int		length;
+	size_t	div;
+
+	length = 0;
+	div = dec;
+	if (div == 0)
+		length++;
+	while (div != 0)
+	{
+		length++;
+		div = div / 16;
+	}
+	return (length);
+}	
 
 char	*ft_itoa_u(unsigned int u)
 {	
@@ -56,23 +73,6 @@ char	*ft_itoa_u(unsigned int u)
 		div = div / 10;
 	}
 	return (n_char);
-}	
-
-static int	ft_x_len(unsigned long long dec)
-{
-	int					length;
-	unsigned long long	div;
-
-	length = 0;
-	div = dec;
-	if (div == 0)
-		length++;
-	while (div != 0)
-	{
-		length++;
-		div = div / 16;
-	}
-	return (length);
 }		
 
 char	*ft_itoa_hex(size_t dec, char x_case)
@@ -83,7 +83,7 @@ char	*ft_itoa_hex(size_t dec, char x_case)
 	int					reminder;
 
 	div = dec;
-	length = ft_x_len(dec);
+	length = ft_hex_len(dec);
 	x_char = malloc (length + 1);
 	if (!x_char)
 		return (NULL);
@@ -94,12 +94,7 @@ char	*ft_itoa_hex(size_t dec, char x_case)
 		if (reminder < 10)
 			x_char[length] = reminder + '0';
 		else if (reminder >= 10)
-		{
-			if (x_case == 'x')
-				x_char[length] = (reminder - 10) + 'a';
-			else if (x_case == 'X')
-				x_char[length] = (reminder - 10) + 'A';
-		}
+				x_char[length] = (reminder - 10) + (x_case - 23);
 		length--;
 		div = div / 16;
 	}

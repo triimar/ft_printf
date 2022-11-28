@@ -6,7 +6,7 @@
 #    By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/27 20:27:24 by tmarts            #+#    #+#              #
-#    Updated: 2022/11/27 23:03:22 by tmarts           ###   ########.fr        #
+#    Updated: 2022/11/27 23:19:32 by tmarts           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,6 @@ NAME = libftprintf.a
 SOURCE = ft_printf.c\
 ft_printf_utilis.c\
 ft_printf_utilis_2.c\
-libft_functions.c
 
 OBJECT = $(SOURCE:.c=.o)
 

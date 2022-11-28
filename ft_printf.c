@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 18:22:02 by tmarts            #+#    #+#             */
-/*   Updated: 2022/11/27 22:54:20 by tmarts           ###   ########.fr       */
+/*   Updated: 2022/11/28 12:41:50 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,17 +56,12 @@ int	ft_printf(const char *msg, ...)
 		{
 			msg++;
 			temp_len = ft_conversions(msg, args);
-			if (temp_len < 0)
-				return (-1);
-			len += temp_len;
 		}
 		else
-		{
 			temp_len = ft_putchar(*msg);
-			if (temp_len < 0)
-				return (-1);
-			len += temp_len;
-		}			
+		if (temp_len < 0)
+			return (-1);
+		len += temp_len;
 		msg++;
 	}
 	va_end(args);

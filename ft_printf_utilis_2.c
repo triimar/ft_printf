@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 20:21:16 by tmarts            #+#    #+#             */
-/*   Updated: 2022/11/27 22:55:34 by tmarts           ###   ########.fr       */
+/*   Updated: 2022/11/28 13:27:28 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ int	ft_printf_str(char *str)
 	{
 		if (write(1, "(null)", 6) < 0)
 			return (-1);
-		return (6);
+		else
+			return (6);
 	}
 	len = ft_strlen(str);
 	if (write(1, str, len) < 0)
