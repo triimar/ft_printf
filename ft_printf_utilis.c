@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 16:58:33 by tmarts            #+#    #+#             */
-/*   Updated: 2022/11/28 19:59:31 by tmarts           ###   ########.fr       */
+/*   Updated: 2022/11/29 16:09:12 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_putchar(int c)
 	return (1);
 }
 
-static int	ft_u_intlen(unsigned int u)
+int	ft_u_intlen(unsigned int u)
 {
 	int				length;
 	long long int	div;
@@ -36,7 +36,7 @@ static int	ft_u_intlen(unsigned int u)
 	return (length);
 }	
 
-static int	ft_hex_len(size_t dec)
+int	ft_hex_len(size_t dec)
 {
 	int		length;
 	size_t	div;
