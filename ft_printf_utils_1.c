@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_utilis.c                                 :+:      :+:    :+:   */
+/*   ft_printf_utils_1.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 16:58:33 by tmarts            #+#    #+#             */
-/*   Updated: 2022/11/29 16:09:12 by tmarts           ###   ########.fr       */
+/*   Updated: 2022/12/29 14:58:44 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putchar(int c)
+int	ft_putchar_int(int c)
 {
 	if (write(1, &c, 1) < 0)
 		return (-1);
@@ -87,7 +87,8 @@ char	*ft_itoa_hex(size_t dec, char x_case)
 	x_char = malloc (length + 1);
 	if (!x_char)
 		return (NULL);
-	x_char[length--] = 0;
+	x_char[length] = 0;
+	length -= 1;
 	while (length >= 0)
 	{
 		reminder = div % 16;

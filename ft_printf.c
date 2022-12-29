@@ -6,29 +6,27 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 18:22:02 by tmarts            #+#    #+#             */
-/*   Updated: 2022/11/28 19:59:45 by tmarts           ###   ########.fr       */
+/*   Updated: 2022/12/29 14:46:28 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-/*len, length, is the return value of ft_printf - 
-the lenght of the string printed
-msg, the message string, is the first argument of ft_printf
-
-finds suitable conversion and prints the target
+/*
+int	ft_conversions(const char *f_spec, va_list args)
+Finds suitable conversion and prints the target
 returns nr of printed characters
-f_spec - the format specifier*/
-
+const char *f_spec - the format specifier
+*/
 int	ft_conversions(const char *f_spec, va_list args)
 {
 	int		len;
 
 	len = 0;
 	if (*f_spec == 'c')
-		len = ft_putchar(va_arg(args, int));
+		len = ft_putchar_int(va_arg(args, int));
 	else if (*f_spec == '%')
-		len = ft_putchar('%');
+		len = ft_putchar_int('%');
 	else if (*f_spec == 's')
 		len = ft_printf_str(va_arg(args, char *));
 	else if (*f_spec == 'i' || *f_spec == 'd')
@@ -39,9 +37,17 @@ int	ft_conversions(const char *f_spec, va_list args)
 		len = ft_printf_hex(va_arg(args, unsigned int), *f_spec);
 	else if (*f_spec == 'p')
 		len = ft_printf_p(va_arg(args, size_t));
+	else
+		len = ft_putchar_int(*f_spec);
 	return (len);
 }
 
+/*
+int	ft_printf(const char *msg, ...)
+len - length, is the return value of ft_printf; 
+the lenght of the string printed
+msg - the message string, is the first argument of ft_printf
+*/
 int	ft_printf(const char *msg, ...)
 {
 	va_list	args;
@@ -58,28 +64,13 @@ int	ft_printf(const char *msg, ...)
 			temp_len = ft_conversions(msg, args);
 		}
 		else
-			temp_len = ft_putchar(*msg);
+			temp_len = ft_putchar_int(*msg);
 		if (temp_len < 0)
 			return (-1);
 		len += temp_len;
+		temp_len = 0;
 		msg++;
 	}
 	va_end(args);
 	return (len);
 }
-
-// int	ft_printf_char(char *f_spec)
-// {
-// 	ft_putchar(f_spec++, 1);
-// 	return (1);
-// }
-
-// int	ft_printf_str(char *ptr)
-// {
-// 	int	len;
-
-// 	len = 0;
-// 	while (*(ptr + len) != 0)
-// 		write(1, (ptr + len++), 1);
-// 	return (len);
-// }

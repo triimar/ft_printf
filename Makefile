@@ -6,14 +6,15 @@
 #    By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/27 20:27:24 by tmarts            #+#    #+#              #
-#    Updated: 2022/11/27 23:19:32 by tmarts           ###   ########.fr        #
+#    Updated: 2022/12/29 14:59:28 by tmarts           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 SOURCE = ft_printf.c\
-ft_printf_utilis.c\
-ft_printf_utilis_2.c\
+ft_printf_utils_1.c\
+ft_printf_utils_2.c\
+
 
 OBJECT = $(SOURCE:.c=.o)
 

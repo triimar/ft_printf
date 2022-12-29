@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_utilis_2.c                               :+:      :+:    :+:   */
+/*   ft_printf_utils_2.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 20:21:16 by tmarts            #+#    #+#             */
-/*   Updated: 2022/11/28 19:59:20 by tmarts           ###   ########.fr       */
+/*   Updated: 2022/12/08 19:36:18 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	ft_printf_u(unsigned int u_num)
 	return (len);
 }
 
-int	ft_printf_hex(unsigned int x_num, char x_case)
+int	ft_printf_hex(size_t x_num, char x_case)
 {
 	int		len;
 	char	*str;
