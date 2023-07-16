@@ -6,7 +6,7 @@
 #    By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/27 20:27:24 by tmarts            #+#    #+#              #
-#    Updated: 2022/12/29 14:59:28 by tmarts           ###   ########.fr        #
+#    Updated: 2022/12/29 16:37:50 by tmarts           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ ft_printf_utils_2.c\
 
 OBJECT = $(SOURCE:.c=.o)
 
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
@@ -28,7 +28,7 @@ $(NAME): $(OBJECT)
 	mv libft/libft.a libftprintf.a
 	ar -rcs $(NAME) $(OBJECT)
 
-$(OBJECT): $(SOURCE) 
+$(OBJECT): $(SOURCE)
 	$(CC) -c $(CFLAGS) $(SOURCE)
 
 clean:
