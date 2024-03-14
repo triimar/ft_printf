@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmarts <tmarts@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 19:18:16 by tmarts            #+#    #+#             */
-/*   Updated: 2022/10/31 14:59:57 by tmarts           ###   ########.fr       */
+/*   Updated: 2024/03/14 15:43:12 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	{
 		*lst = new;
 		return ;
-	}		
+	}
 	last = *lst;
 	last = ft_lstlast(*lst);
 	last->next = new;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmarts <tmarts@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 18:49:16 by tmarts            #+#    #+#             */
-/*   Updated: 2022/10/30 19:16:31 by tmarts           ###   ########.fr       */
+/*   Updated: 2024/03/14 15:50:03 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ t_list	*ft_lstlast(t_list *lst)
 		if (current->next == 0)
 			return (current);
 		current = current->next;
-	}	
+	}
 	return (0);
 }

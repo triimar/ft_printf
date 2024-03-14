@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmarts <tmarts@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 16:12:44 by tmarts            #+#    #+#             */
-/*   Updated: 2022/11/02 21:11:23 by tmarts           ###   ########.fr       */
+/*   Updated: 2024/03/14 15:49:19 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		i++;
 	}
 	if (i == size)
-			sub[i] = '\0';
+		sub[i] = '\0';
 	return (sub);
 }

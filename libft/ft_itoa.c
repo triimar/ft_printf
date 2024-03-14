@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmarts <tmarts@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 19:51:36 by tmarts            #+#    #+#             */
-/*   Updated: 2022/10/26 18:38:52 by tmarts           ###   ########.fr       */
+/*   Updated: 2024/03/14 15:43:03 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	ft_intlen(int n)
 		div = div / 10;
 	}
 	return (length);
-}		
+}
 
 static int	ft_is_neg(int n)
 {
@@ -37,7 +37,7 @@ static int	ft_is_neg(int n)
 }
 
 char	*ft_itoa(int n)
-{	
+{
 	char			*n_char;
 	int				length;
 	long long int	div;
@@ -61,4 +61,4 @@ char	*ft_itoa(int n)
 		div = div / 10;
 	}
 	return (n_char);
-}		
+}

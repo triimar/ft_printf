@@ -6,7 +6,7 @@
 /*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 19:42:54 by tmarts            #+#    #+#             */
-/*   Updated: 2022/11/27 22:46:36 by tmarts           ###   ########.fr       */
+/*   Updated: 2024/03/14 15:49:02 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	ft_splitnr(char const *s, char c)
 }
 
 static char	*ft_next_start(char const *start, char c)
-{	
+{
 	char	*next_start;
 
 	while (*start == c && *start != 0)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmarts <tmarts@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 22:36:55 by tmarts            #+#    #+#             */
-/*   Updated: 2022/10/28 18:00:27 by tmarts           ###   ########.fr       */
+/*   Updated: 2024/03/14 15:42:43 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_atoi(const char *str)
 	{
 		neg_pos = -1;
 		str++;
-	}	
+	}
 	else if (*str == '+')
 		str++;
 	while (*str >= 48 && *str <= 57)

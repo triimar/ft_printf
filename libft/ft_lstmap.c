@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmarts <tmarts@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tmarts <tmarts@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 17:56:07 by tmarts            #+#    #+#             */
-/*   Updated: 2022/11/03 13:43:39 by tmarts           ###   ########.fr       */
+/*   Updated: 2024/03/14 15:49:59 by tmarts           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			ft_lstclear(&new_list, del);
 			free(content);
 			return (NULL);
-		}	
+		}
 		ft_lstadd_back(&new_list, new_node);
 		current = current->next;
 	}
